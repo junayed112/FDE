@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Company</title>
+<meta name="description" content="Your Company — one sentence on what you do and who you do it for.">
+<style>
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --text: #17181c;
+    --muted: #61646e;
+    --line: #e6e3dc;
+    --accent: #0f766e;
+    --accent-soft: #e3f2ef;
+    --on-accent: #ffffff;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111214;
+      --surface: #191b1e;
+      --text: #ecedef;
+      --muted: #9b9fa8;
+      --line: #2a2d32;
+      --accent: #2dd4bf;
+      --accent-soft: #15302d;
+      --on-accent: #0b1514;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; letter-spacing: -.01em; }
+  .mark { width: 30px; height: 30px; border-radius: 8px; background: var(--accent); display: grid; place-items: center; color: var(--on-accent); font-size: .9rem; }
+  .links { display: none; gap: 28px; list-style: none; }
+  .links a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+  .links a:hover { color: var(--text); }
+  @media (min-width: 760px) { .links { display: flex; } }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: 999px;
+    background: var(--accent); color: var(--on-accent);
+    font: inherit; font-weight: 600; font-size: .95rem;
+    text-decoration: none; border: 1px solid var(--accent); cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); opacity: .92; }
+  .btn.secondary { background: transparent; color: var(--text); border-color: var(--line); }
+  .btn.small { padding: 8px 16px; font-size: .9rem; }
+
+  /* Hero */
+  .hero { padding: 88px 0 72px; }
+  .eyebrow {
+    display: inline-block; padding: 6px 12px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+    font-size: .82rem; font-weight: 600; margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(2.3rem, 6.5vw, 4.2rem);
+    line-height: 1.05; letter-spacing: -.03em; max-width: 14ch; margin-bottom: 22px;
+  }
+  .hero p { font-size: 1.15rem; color: var(--muted); max-width: 54ch; margin-bottom: 32px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .trust { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 12px 32px; color: var(--muted); font-size: .9rem; }
+  .trust b { color: var(--text); }
+
+  /* Sections */
+  section { padding: 80px 0; border-top: 1px solid var(--line); }
+  .kicker { color: var(--accent); font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -.02em; line-height: 1.15; max-width: 22ch; margin-bottom: 16px; }
+  .intro { color: var(--muted); max-width: 60ch; margin-bottom: 44px; }
+
+  .grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 680px) { .grid.three { grid-template-columns: repeat(3, 1fr); } .grid.two { grid-template-columns: 1fr 1fr; } }
+
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .card .num { font-size: .85rem; font-weight: 700; color: var(--accent); margin-bottom: 14px; }
+  .card h3 { font-size: 1.15rem; margin-bottom: 8px; letter-spacing: -.01em; }
+  .card p { color: var(--muted); font-size: .96rem; }
+
+  .steps { counter-reset: s; display: grid; gap: 0; }
+  .step { display: grid; grid-template-columns: 48px 1fr; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: 0; }
+  .step::before {
+    counter-increment: s; content: counter(s, decimal-leading-zero);
+    font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums;
+  }
+  .step h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .step p { color: var(--muted); font-size: .96rem; }
+
+  blockquote {
+    font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.4; letter-spacing: -.01em;
+    max-width: 34ch; margin-bottom: 20px;
+  }
+  .who { color: var(--muted); font-size: .95rem; }
+
+  /* Contact */
+  .contact { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; }
+  @media (min-width: 680px) { .contact { padding: 48px; } }
+  form { display: grid; gap: 14px; }
+  label { font-size: .88rem; font-weight: 600; display: grid; gap: 6px; }
+  input, textarea {
+    width: 100%; padding: 12px 14px; font: inherit; font-weight: 400;
+    color: var(--text); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 10px;
+  }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+  .details { display: grid; gap: 18px; align-content: start; }
+  .details div { color: var(--muted); }
+  .details b { display: block; color: var(--text); }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: .9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer nav { display: flex; gap: 20px; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true">Y</span>Your Company</a>
+    <ul class="links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How we work</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn small" href="#contact">Contact us</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Now taking new clients for 2026</span>
+      <h1>Clear headline about the value you deliver.</h1>
+      <p>One or two sentences on what your company does, who it serves, and why customers pick you over the alternatives.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Start a project &rarr;</a>
+        <a class="btn secondary" href="#services">See what we do</a>
+      </div>
+      <div class="trust">
+        <span><b>120+</b> clients served</span>
+        <span><b>8 years</b> in business</span>
+        <span><b>4.9/5</b> average rating</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="kicker">Services</div>
+      <h2>What we can do for you</h2>
+      <p class="intro">A short paragraph that frames your offering. Keep each service below to one sentence of benefit, not features.</p>
+      <div class="grid three">
+        <article class="card"><div class="num">01</div><h3>Service one</h3><p>The outcome a customer gets from this service, in plain language.</p></article>
+        <article class="card"><div class="num">02</div><h3>Service two</h3><p>The outcome a customer gets from this service, in plain language.</p></article>
+        <article class="card"><div class="num">03</div><h3>Service three</h3><p>The outcome a customer gets from this service, in plain language.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap grid two">
+      <div>
+        <div class="kicker">How we work</div>
+        <h2>A simple process, start to finish</h2>
+        <p class="intro">Customers want to know what happens after they reach out. Spell it out.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div><h3>Discovery call</h3><p>We learn about your goals, timeline, and budget.</p></div></div>
+        <div class="step"><div><h3>Proposal</h3><p>You get a clear plan with scope and pricing.</p></div></div>
+        <div class="step"><div><h3>Delivery</h3><p>We do the work and keep you updated along the way.</p></div></div>
+        <div class="step"><div><h3>Ongoing support</h3><p>We stay available after launch.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="kicker">What clients say</div>
+      <blockquote>&ldquo;Replace this with a real quote from a happy customer about the result you delivered.&rdquo;</blockquote>
+      <div class="who">Customer Name &middot; Title, Their Company</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact grid two">
+        <div class="details">
+          <div>
+            <div class="kicker">Contact</div>
+            <h2>Let&rsquo;s talk</h2>
+            <p>Tell us a little about what you need and we&rsquo;ll get back to you within one business day.</p>
+          </div>
+          <div><b>Email</b>hello@yourcompany.com</div>
+          <div><b>Phone</b>+1 (555) 000-0000</div>
+          <div><b>Office</b>123 Street Name, City</div>
+        </div>
+        <form action="mailto:hello@yourcompany.com" method="post" enctype="text/plain">
+          <label>Name<input type="text" name="name" autocomplete="name" required></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required></label>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Your Company</span>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

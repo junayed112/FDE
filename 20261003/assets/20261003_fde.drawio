@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="0kqXdmXo5AJJVOvYuAxk">
+    <mxGraphModel dx="1294" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EFbiVhXo5B23eYafbnNN-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="160" width="100" x="325" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-2" edge="1" parent="1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="180" y="260" as="sourcePoint" />
+            <mxPoint x="310" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;please go and buy some burgers&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="50" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Process" vertex="1">
+          <mxGeometry height="30" width="60" x="670" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="act" vertex="1">
+          <mxGeometry height="30" width="60" x="670" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;learn swim&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="50" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;birthday&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="110" x="50" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="memory" vertex="1">
+          <mxGeometry height="60" width="120" x="190" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="processing unit" vertex="1">
+          <mxGeometry height="60" width="120" x="325" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="skill" vertex="1">
+          <mxGeometry height="60" width="120" x="205" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="unsupervised&amp;nbsp;&lt;br&gt;text" vertex="1">
+          <mxGeometry height="210" width="120" x="290" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="instruction" vertex="1">
+          <mxGeometry height="210" width="120" x="510" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="machine" vertex="1">
+          <mxGeometry height="60" width="120" x="510" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-17" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="60" width="30" x="335" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="EFbiVhXo5B23eYafbnNN-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="high level instruction&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;agent manager&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;FDE&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="120" x="85" y="470" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
